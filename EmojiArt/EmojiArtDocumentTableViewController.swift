@@ -87,5 +87,12 @@ class EmojiArtDocumentTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    // MARK: - View Controller Lifecycle
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .primaryOverlay {
+            splitViewController?.preferredDisplayMode = .primaryOverlay
+        }
+    }
 }
